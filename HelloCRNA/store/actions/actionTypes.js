@@ -1,0 +1,2 @@
+export const ADD_ADDRESS = 'ADD_ADDRESS'
+export const SELECT_ADDRESS = 'SELECT_ADDRESS'
