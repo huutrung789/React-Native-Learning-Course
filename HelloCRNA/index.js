@@ -1,5 +1,6 @@
 /** @format */
 
+import { Navigation } from 'react-native-navigation'
 import React from 'react'
 import {AppRegistry} from 'react-native';
 import App from './App';
@@ -16,4 +17,16 @@ const RNRedux = () => {
         )
 }
 
-AppRegistry.registerComponent(appName, () => RNRedux);
+Navigation.registerComponent("app.firstScreen", () => App())
+
+// AppRegistry.registerComponent(appName, () => RNRedux);
+
+Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setRoot({
+        root: {
+            component: {
+                name: "app.firstScreen"
+            }
+        }
+    })
+})
